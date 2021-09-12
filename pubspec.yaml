@@ -1,0 +1,46 @@
+name: board_ui
+description: A new Flutter project.
+
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.12.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  get:
+  hexcolor:
+  google_fonts:
+  eva_icons_flutter:
+  font_awesome_flutter: 
+  cupertino_icons: ^1.0.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+
+
+  uses-material-design: true
+
+  assets:
+      - assets/img/
+      - assets/icon/
+
+  fonts:
+    - family: Poppins Regular
+      fonts:
+        - asset: fonts/Poppins-Regular.ttf
+    - family: Poppins Bold
+      fonts:
+        - asset: fonts/Poppins-Bold.ttf
+    - family: Poppins Semi Bold
+      fonts:
+        - asset: fonts/Poppins-SemiBold.ttf
+    - family: Poppins Thin
+      fonts:
+        - asset: fonts/Poppins-Thin.ttf
