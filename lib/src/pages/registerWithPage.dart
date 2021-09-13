@@ -1,14 +1,14 @@
 import 'package:board_ui/src/configs/appTheme.dart';
 import 'package:board_ui/src/pages/loginPage.dart';
-import 'package:board_ui/src/pages/registerWithPage.dart';
+import 'package:board_ui/src/pages/registerPage.dart';
 import 'package:board_ui/src/widgets/kText.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:hexcolor/hexcolor.dart';
 
-class LoginWithPage extends StatelessWidget {
-  const LoginWithPage({Key? key}) : super(key: key);
+class RegisterWithPage extends StatelessWidget {
+  const RegisterWithPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +25,7 @@ class LoginWithPage extends StatelessWidget {
                   height: 80,
                 ),
                 KText(
-                  text: 'Login',
+                  text: 'Register',
                   color: HexColor('#323643'),
                   fontSize: 20,
                   fontFamily: 'Poppins Semi Bold',
@@ -34,7 +34,7 @@ class LoginWithPage extends StatelessWidget {
                   height: 13,
                 ),
                 KText(
-                  text: '''Login to your account using your email or
+                  text: '''Create a new account using your email or
 social media accounts''',
                   fontSize: 14,
                   color: HexColor('#BCBCBC'),
@@ -50,7 +50,7 @@ social media accounts''',
                     color: HexColor('#F7D107'),
                   ),
                   title: KText(
-                    text: 'Sign in using Facebook',
+                    text: 'Sign up using Facebook',
                     fontSize: 14,
                   ),
                 ),
@@ -65,7 +65,7 @@ social media accounts''',
                     color: HexColor('#F7D107'),
                   ),
                   title: KText(
-                    text: 'Sign in using Google',
+                    text: 'Sign up using Google',
                     fontSize: 14,
                   ),
                 ),
@@ -80,7 +80,7 @@ social media accounts''',
                     color: HexColor('#F7D107'),
                   ),
                   title: KText(
-                    text: 'Sign in using Apple',
+                    text: 'Sign up using Apple',
                     fontSize: 14,
                   ),
                 ),
@@ -88,14 +88,14 @@ social media accounts''',
                   height: 200,
                 ),
                 ListTile(
-                  onTap: () => Get.to(LoginPage()),
+                  onTap: () => Get.to(RegisterPage()),
                   leading: Image.asset(
                     'assets/icon/gmail.png',
                     width: 33,
                     // color: HexColor('#F7D107'),
                   ),
                   title: KText(
-                    text: 'Sign in using Email',
+                    text: 'Sign up using Email',
                     fontSize: 14,
                   ),
                 ),
@@ -107,14 +107,14 @@ social media accounts''',
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     KText(
-                      text: '''Don't have account?''',
+                      text: '''Already have an account?''',
                       fontSize: 14,
                       color: AppTheme.textColor2,
                     ),
                     GestureDetector(
-                      onTap: () => Get.to(RegisterWithPage()),
+                      onTap: () => Get.to(LoginPage()),
                       child: KText(
-                        text: ' Sign up',
+                        text: ' Login',
                         fontSize: 14,
                         fontWeight: FontWeight.w700,
                       ),

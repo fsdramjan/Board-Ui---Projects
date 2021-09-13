@@ -1,4 +1,6 @@
 import 'package:board_ui/src/pages/loginWithPage.dart';
+import 'package:board_ui/src/pages/placeingBidPage.dart';
+import 'package:board_ui/src/pages/registerWithPage.dart';
 import 'package:board_ui/src/widgets/kText.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -15,9 +17,12 @@ class SplashPage extends StatelessWidget {
               SizedBox(
                 height: 50,
               ),
-              Image.asset(
-                'assets/img/logo.png',
-                width: 330,
+              GestureDetector(
+                onTap: () => Get.to(PlaceingBidPage()),
+                child: Image.asset(
+                  'assets/img/logo.png',
+                  width: 330,
+                ),
               ),
               SizedBox(
                 height: 220,
@@ -31,11 +36,14 @@ class SplashPage extends StatelessWidget {
                     fontSize: 15,
                     color: HexColor('#BCBCBC'),
                   ),
-                  KText(
-                    text: ' Sign up',
-                    color: HexColor('#323643'),
-                    fontSize: 15,
-                    fontWeight: FontWeight.w700,
+                  GestureDetector(
+                    onTap: () => Get.to(RegisterWithPage()),
+                    child: KText(
+                      text: ' Sign up',
+                      color: HexColor('#323643'),
+                      fontSize: 15,
+                      fontWeight: FontWeight.w700,
+                    ),
                   ),
                 ],
               ),
@@ -59,15 +67,12 @@ class SplashPage extends StatelessWidget {
                         Container(
                           alignment: Alignment.center,
                           child: KText(
-                            text:
-                            'Login',
-                           
-                              color: Colors.white,
-                              fontSize: 16,
-                              fontWeight: FontWeight.w600,
-                            ),
+                            text: 'Login',
+                            color: Colors.white,
+                            fontSize: 16,
+                            fontWeight: FontWeight.w600,
                           ),
-                        
+                        ),
                         Positioned(
                           right: 20,
                           child: Image.asset(

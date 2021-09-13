@@ -1,16 +1,12 @@
 import 'package:board_ui/src/configs/appTheme.dart';
+import 'package:board_ui/src/pages/OtpPage.dart';
+import 'package:board_ui/src/pages/loginPage.dart';
 import 'package:board_ui/src/widgets/kText.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:hexcolor/hexcolor.dart';
 
-class LoginPage extends StatefulWidget {
-  @override
-  _LoginPageState createState() => _LoginPageState();
-}
-
-class _LoginPageState extends State<LoginPage> {
-  bool value = false;
+class RegisterPage extends StatelessWidget {
+  const RegisterPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -40,7 +36,7 @@ class _LoginPageState extends State<LoginPage> {
                   height: 40,
                 ),
                 KText(
-                  text: 'Login',
+                  text: 'Register',
                   color: AppTheme.textColor,
                   fontSize: 20,
                   fontFamily: 'Poppins Semi Bold',
@@ -49,13 +45,13 @@ class _LoginPageState extends State<LoginPage> {
                   height: 13,
                 ),
                 KText(
-                  text: '''Login to your account using your email and
+                  text: '''Create a new account using your email and
 start working today!''',
                   fontSize: 14,
                   color: AppTheme.textColor2,
                 ),
                 SizedBox(
-                  height: 80,
+                  height: 100,
                 ),
                 Row(
                   children: [
@@ -91,81 +87,35 @@ start working today!''',
                   ),
                 ),
                 SizedBox(
-                  height: 20,
+                  height: 280,
                 ),
                 Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Image.asset(
-                      'assets/icon/lock.png',
-                      width: 14,
-                    ),
-                    SizedBox(
-                      width: 15,
-                    ),
                     KText(
-                      text: 'Password',
-                      fontSize: 13,
-                      fontWeight: FontWeight.w600,
-                    ),
-                  ],
-                ),
-                SizedBox(
-                  height: 10,
-                ),
-                Container(
-                  height: 55,
-                  width: Get.width,
-                  child: TextField(
-                    keyboardType: TextInputType.number,
-                    obscureText: true,
-                    obscuringCharacter: '*',
-                    decoration: InputDecoration(
-                      hintText: '**********',
-                      hintStyle: TextStyle(
-                        letterSpacing: 6,
-                        fontSize: 14,
-                        color: AppTheme.textColor2,
-                      ),
-                      suffixIcon: Padding(
-                        padding: EdgeInsets.all(20.0),
-                        child: Image.asset(
-                          'assets/icon/eye.png',
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-                SizedBox(
-                  height: 25,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    checkBox(),
-                    SizedBox(width: 15),
-                    KText(
-                      text: 'Remember me',
+                      text: 'Already have an account?',
                       fontSize: 14,
-                      // fontWeight: FontWeight.w500,
                       color: AppTheme.textColor2,
                     ),
-                    Spacer(),
-                    KText(
-                      text: 'Forget Password',
-                      color: AppTheme.textColor,
-                      fontSize: 14,
-                      fontFamily: 'Poppins Semi Bold',
+                    GestureDetector(
+                      onTap: () => Get.to(LoginPage()),
+                      child: KText(
+                        text: ' Login',
+                        fontSize: 14,
+                        fontWeight: FontWeight.w700,
+                      ),
                     ),
                   ],
                 ),
                 SizedBox(
-                  height: 230,
+                  height: 50,
                 ),
                 GestureDetector(
-                  onTap: () {},
+                  onTap: () => Get.to(OtpPage()),
                   child: Container(
                     height: 50,
-                    width: double.infinity,
+                    width: Get.width,
                     decoration: BoxDecoration(
                       color: AppTheme.primaryColor,
                       borderRadius: BorderRadius.circular(10),
@@ -176,8 +126,8 @@ start working today!''',
                         Container(
                           alignment: Alignment.center,
                           child: KText(
-                            text: 'Login',
-                            color: AppTheme.white,
+                            text: 'Register Account',
+                            color: Colors.white,
                             fontSize: 16,
                             fontWeight: FontWeight.w600,
                           ),
@@ -185,7 +135,7 @@ start working today!''',
                         Positioned(
                           right: 20,
                           child: Image.asset(
-                            'assets/icon/login.png',
+                            'assets/icon/user.png',
                             height: 18,
                           ),
                         ),
@@ -203,22 +153,4 @@ start working today!''',
       ),
     );
   }
-
-  Widget checkBox() => Container(
-        height: 20,
-        width: 20,
-        decoration: BoxDecoration(
-          color: HexColor('#F9F9F9'),
-          borderRadius: BorderRadius.circular(5),
-        ),
-        child: Checkbox(
-            fillColor: MaterialStateProperty.all(Colors.transparent),
-            checkColor: Colors.green,
-            value: value,
-            onChanged: (value) {
-              setState(() {
-                this.value = value!;
-              });
-            }),
-      );
 }

@@ -1,15 +1,16 @@
 import 'package:board_ui/src/configs/appTheme.dart';
+import 'package:board_ui/src/pages/home.dart';
 import 'package:board_ui/src/widgets/kText.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hexcolor/hexcolor.dart';
 
-class LoginPage extends StatefulWidget {
+class RegisterFormPage extends StatefulWidget {
   @override
-  _LoginPageState createState() => _LoginPageState();
+  _RegisterFormPageState createState() => _RegisterFormPageState();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _RegisterFormPageState extends State<RegisterFormPage> {
   bool value = false;
 
   @override
@@ -40,7 +41,7 @@ class _LoginPageState extends State<LoginPage> {
                   height: 40,
                 ),
                 KText(
-                  text: 'Login',
+                  text: 'Register',
                   color: AppTheme.textColor,
                   fontSize: 20,
                   fontFamily: 'Poppins Semi Bold',
@@ -49,7 +50,7 @@ class _LoginPageState extends State<LoginPage> {
                   height: 13,
                 ),
                 KText(
-                  text: '''Login to your account using your email and
+                  text: '''Create a new account using your email and
 start working today!''',
                   fontSize: 14,
                   color: AppTheme.textColor2,
@@ -60,14 +61,14 @@ start working today!''',
                 Row(
                   children: [
                     Image.asset(
-                      'assets/icon/email.png',
-                      width: 17,
+                      'assets/icon/user1.png',
+                      width: 14,
                     ),
                     SizedBox(
                       width: 15,
                     ),
                     KText(
-                      text: 'Email Address',
+                      text: 'Full Name',
                       fontSize: 13,
                       fontWeight: FontWeight.w600,
                     ),
@@ -80,9 +81,45 @@ start working today!''',
                   height: 55,
                   width: Get.width,
                   child: TextField(
-                    keyboardType: TextInputType.emailAddress,
+                    keyboardType: TextInputType.name,
                     decoration: InputDecoration(
-                      hintText: 'Mist4227s@gmail.com',
+                      hintText: 'Khalid Saied Abdelmonem',
+                      hintStyle: TextStyle(
+                        fontSize: 14,
+                        color: AppTheme.textColor2,
+                      ),
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                Row(
+                  children: [
+                    Image.asset(
+                      'assets/icon/user1.png',
+                      width: 14,
+                    ),
+                    SizedBox(
+                      width: 15,
+                    ),
+                    KText(
+                      text: 'Username',
+                      fontSize: 13,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+                Container(
+                  height: 55,
+                  width: Get.width,
+                  child: TextField(
+                    keyboardType: TextInputType.name,
+                    decoration: InputDecoration(
+                      hintText: 'Khalid@1823..',
                       hintStyle: TextStyle(
                         fontSize: 14,
                         color: AppTheme.textColor2,
@@ -136,33 +173,41 @@ start working today!''',
                   ),
                 ),
                 SizedBox(
-                  height: 25,
+                  height: 30,
                 ),
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     checkBox(),
-                    SizedBox(width: 15),
-                    KText(
-                      text: 'Remember me',
-                      fontSize: 14,
-                      // fontWeight: FontWeight.w500,
-                      color: AppTheme.textColor2,
-                    ),
-                    Spacer(),
-                    KText(
-                      text: 'Forget Password',
-                      color: AppTheme.textColor,
-                      fontSize: 14,
-                      fontFamily: 'Poppins Semi Bold',
+                    SizedBox(width: 10),
+                    RichText(
+                      text: TextSpan(
+                        text: 'I Accept ',
+                        style: TextStyle(
+                          fontSize: 16,
+                          color: AppTheme.textColor,
+                          fontFamily: 'Poppins Regular',
+                        ),
+                        children: [
+                          TextSpan(
+                            text: 'Terms & Conditions',
+                            style: TextStyle(
+                              fontSize: 16,
+                              fontFamily: 'Poppins Regular',
+                              color: AppTheme.iconColor,
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                   ],
                 ),
                 SizedBox(
-                  height: 230,
+                  height: 110,
                 ),
                 GestureDetector(
-                  onTap: () {},
+                  onTap: () => Get.to(Home()),
                   child: Container(
                     height: 50,
                     width: double.infinity,
@@ -176,7 +221,7 @@ start working today!''',
                         Container(
                           alignment: Alignment.center,
                           child: KText(
-                            text: 'Login',
+                            text: 'Register Account',
                             color: AppTheme.white,
                             fontSize: 16,
                             fontWeight: FontWeight.w600,
@@ -185,7 +230,7 @@ start working today!''',
                         Positioned(
                           right: 20,
                           child: Image.asset(
-                            'assets/icon/login.png',
+                            'assets/icon/user.png',
                             height: 18,
                           ),
                         ),
@@ -205,8 +250,8 @@ start working today!''',
   }
 
   Widget checkBox() => Container(
-        height: 20,
-        width: 20,
+        height: 21,
+        width: 21,
         decoration: BoxDecoration(
           color: HexColor('#F9F9F9'),
           borderRadius: BorderRadius.circular(5),

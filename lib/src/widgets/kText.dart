@@ -9,6 +9,7 @@ class KText extends StatelessWidget {
   final String? fontFamily;
   final int? maxLines;
   final FontWeight? fontWeight;
+  final TextAlign? textAlign;
 
   KText({
     required this.text,
@@ -17,6 +18,7 @@ class KText extends StatelessWidget {
     this.fontFamily,
     this.maxLines,
     this.fontWeight,
+    this.textAlign,
   });
 
   @override
@@ -30,7 +32,7 @@ class KText extends StatelessWidget {
         fontWeight: fontWeight != null ? fontWeight : FontWeight.normal,
       ),
       maxLines: maxLines,
-      overflow: TextOverflow.ellipsis,
+      textAlign: textAlign,
     );
   }
 }
