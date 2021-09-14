@@ -28,11 +28,13 @@ class _LoginPageState extends State<LoginPage> {
                 ),
                 GestureDetector(
                   onTap: () => Get.back(),
-                  child: Padding(
-                    padding: EdgeInsets.only(left: 10),
-                    child: Icon(
-                      Icons.arrow_back_ios,
-                      size: 18,
+                  child: Container(
+                    child: Padding(
+                      padding: EdgeInsets.only(left: 10),
+                      child: Icon(
+                        Icons.arrow_back_ios,
+                        size: 18,
+                      ),
                     ),
                   ),
                 ),

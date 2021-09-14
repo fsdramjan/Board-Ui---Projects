@@ -39,9 +39,10 @@ class _HomeState extends State<Home> {
         child: _currentScreens,
       ),
       floatingActionButton: Container(
-        height: 65,
-        width: 65,
+        height: 70,
+        width: 70,
         child: FittedBox(
+          alignment: Alignment.bottomCenter,
           child: FloatingActionButton(
             elevation: 0,
             backgroundColor: AppTheme.primaryColor,
@@ -73,7 +74,16 @@ class _HomeState extends State<Home> {
         notchMargin: 10,
         child: Container(
           width: Get.width,
-          height: 60,
+          height: 70,
+          decoration: BoxDecoration(
+            boxShadow: [
+              BoxShadow(
+                color: Colors.white.withOpacity(.50),
+                spreadRadius: 80,
+                blurRadius: 70,
+              ),
+            ],
+          ),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [

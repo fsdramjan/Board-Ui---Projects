@@ -82,7 +82,7 @@ class SearchPage extends StatelessWidget {
                     ),
                   ],
                 ),
-                SizedBox(height: 30),
+                SizedBox(height: 20),
                 Container(
                   height: 100,
                   child: ListView.builder(
@@ -167,18 +167,18 @@ class SearchPage extends StatelessWidget {
                   primary: false,
                   itemBuilder: (BuildContext context, int index) {
                     return Container(
-                      height: 140,
+                      height: 130,
                       width: Get.width,
                       // color: Colors.red,
                       child: Column(
                         children: [
                           listViewContent(),
-                          SizedBox(height: 10),
                         ],
                       ),
                     );
                   },
                 ),
+                SizedBox(height: 10),
               ],
             ),
           ),

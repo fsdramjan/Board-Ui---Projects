@@ -1,5 +1,6 @@
+import 'package:board_ui/src/pages/insideChatPage.dart';
 import 'package:board_ui/src/pages/loginWithPage.dart';
-import 'package:board_ui/src/pages/placeingBidPage.dart';
+
 import 'package:board_ui/src/pages/registerWithPage.dart';
 import 'package:board_ui/src/widgets/kText.dart';
 import 'package:flutter/material.dart';
@@ -18,7 +19,7 @@ class SplashPage extends StatelessWidget {
                 height: 50,
               ),
               GestureDetector(
-                onTap: () => Get.to(PlaceingBidPage()),
+                onTap: () => Get.to(InsideChatPage()),
                 child: Image.asset(
                   'assets/img/logo.png',
                   width: 330,
