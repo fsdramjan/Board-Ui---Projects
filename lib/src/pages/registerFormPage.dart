@@ -1,4 +1,5 @@
 import 'package:board_ui/src/configs/appTheme.dart';
+import 'package:board_ui/src/pages/catagoryProjectsPages.dart';
 import 'package:board_ui/src/pages/home.dart';
 import 'package:board_ui/src/widgets/kText.dart';
 import 'package:flutter/material.dart';
@@ -207,7 +208,7 @@ start working today!''',
                   height: 110,
                 ),
                 GestureDetector(
-                  onTap: () => Get.to(Home()),
+                  onTap: () => Get.to(CatagoryProjectsPage()),
                   child: Container(
                     height: 50,
                     width: double.infinity,

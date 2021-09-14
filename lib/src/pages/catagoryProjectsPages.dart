@@ -1,4 +1,5 @@
 import 'package:board_ui/src/configs/appTheme.dart';
+import 'package:board_ui/src/pages/projectDetailsPage.dart';
 import 'package:board_ui/src/widgets/kText.dart';
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/material.dart';
@@ -199,40 +200,43 @@ class CatagoryProjectsPage extends StatelessWidget {
                           itemCount: catagoryData.length,
                           itemBuilder: (BuildContext context, int index) {
                             final image = catagoryData[index];
-                            return Stack(
-                              children: [
-                                ClipRRect(
-                                  borderRadius: BorderRadius.circular(10),
-                                  child: Image.asset(
-                                    '${image['image']}',
-                                    width: Get.width,
-                                    fit: BoxFit.fill,
-                                  ),
-                                ),
-                                Container(
-                                  height: 120,
-                                  width: 120,
-                                  decoration: BoxDecoration(
+                            return GestureDetector(
+                              onTap: () => Get.to(ProjectDetailsPage()),
+                              child: Stack(
+                                children: [
+                                  ClipRRect(
                                     borderRadius: BorderRadius.circular(10),
-                                    gradient: LinearGradient(
-                                      end: Alignment.topCenter,
-                                      begin: Alignment.bottomCenter,
-                                      colors: [
-                                        gradient1[index],
-                                        gradient2[index],
-                                      ],
+                                    child: Image.asset(
+                                      '${image['image']}',
+                                      width: Get.width,
+                                      fit: BoxFit.fill,
                                     ),
                                   ),
-                                  child: Center(
-                                    child: KText(
-                                      text: '${image['title']}',
-                                      fontSize: 15,
-                                      color: AppTheme.white,
-                                      fontFamily: 'Poppins Semi Bold',
+                                  Container(
+                                    height: 120,
+                                    width: 120,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(10),
+                                      gradient: LinearGradient(
+                                        end: Alignment.topCenter,
+                                        begin: Alignment.bottomCenter,
+                                        colors: [
+                                          gradient1[index],
+                                          gradient2[index],
+                                        ],
+                                      ),
+                                    ),
+                                    child: Center(
+                                      child: KText(
+                                        text: '${image['title']}',
+                                        fontSize: 15,
+                                        color: AppTheme.white,
+                                        fontFamily: 'Poppins Semi Bold',
+                                      ),
                                     ),
                                   ),
-                                ),
-                              ],
+                                ],
+                              ),
                             );
                           },
                         ),

@@ -249,7 +249,7 @@ class PlaceingBidPage extends StatelessWidget {
                 SizedBox(height: 20),
                 Container(
                   height: 120,
-                  width: 350,
+                  width: Get.width,
                   child: TextField(
                     maxLines: 200,
                     style: TextStyle(

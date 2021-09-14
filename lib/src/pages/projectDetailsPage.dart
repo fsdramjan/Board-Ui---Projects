@@ -1,4 +1,5 @@
 import 'package:board_ui/src/configs/appTheme.dart';
+import 'package:board_ui/src/pages/bidSuccessPage.dart';
 import 'package:board_ui/src/widgets/kText.dart';
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/material.dart';
@@ -129,7 +130,7 @@ like its name and description''',
                       hintText: 'Design a school brochure',
                       hintStyle: TextStyle(
                         fontSize: 14,
-                        color: AppTheme.textColor,
+                        color: AppTheme.textColor2,
                       ),
                       contentPadding: EdgeInsets.only(left: 20, right: 20),
                     ),
@@ -147,6 +148,71 @@ like its name and description''',
                 SizedBox(
                   height: 10,
                 ),
+                SizedBox(
+                  height: 50,
+                  child: TextField(),
+                ),
+                SizedBox(height: 30),
+                KText(
+                  text: 'Bid Description',
+                  fontFamily: 'Poppins Semi Bold',
+                  fontSize: 13,
+                  color: AppTheme.textColor,
+                ),
+                SizedBox(height: 20),
+                Container(
+                  height: 140,
+                  width: Get.width,
+                  child: TextField(
+                    maxLines: 200,
+                    style: TextStyle(
+                      fontSize: 12,
+                      color: Colors.grey,
+                      fontWeight: FontWeight.w600,
+                    ),
+                    decoration: InputDecoration(
+                      hintText:
+                          '''Lorem ipsum dolor sit amet, consectetur adipisce
+nw elit, sed do eiusmodLorem ipsum dolor sit ami
+Lorem ipsum dolor sit amet, consectetur adipisce
+Lorem ipsum dolor sit amet, consectetur adipisce
+nw elit, sed do eiusmodLorem ipsum dolor sit ami
+etretqr consectetur adipiscen''',
+
+                      hintStyle: TextStyle(
+                        color: AppTheme.textColor2,
+                        fontSize: 12,
+                      ),
+                      contentPadding: EdgeInsets.only(
+                        left: 20,
+                        top: 40,
+                        bottom: 10,
+                      ),
+                    ),
+                  ),
+                ),
+                SizedBox(height: 80),
+                GestureDetector(
+                  onTap: () => Get.to(BidSuccessPage()),
+                  child: Container(
+                    height: 50,
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                      color: AppTheme.primaryColor,
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: Container(
+                      alignment: Alignment.center,
+                      child: KText(
+                        text: 'Continue',
+                        color: AppTheme.white,
+                        fontSize: 15,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                  ),
+                ),
+                SizedBox(height: 20),
               ],
             ),
           ),
