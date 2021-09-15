@@ -1,6 +1,5 @@
 import 'package:board_ui/src/configs/appTheme.dart';
 import 'package:board_ui/src/pages/catagoryProjectsPages.dart';
-import 'package:board_ui/src/pages/home.dart';
 import 'package:board_ui/src/widgets/kText.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';

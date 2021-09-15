@@ -47,7 +47,7 @@ class BidSuccessPage extends StatelessWidget {
                 KText(
                   text: '''Your bid has been placed successfully and
 we wish you good luck''',
-                  fontSize: 14,
+                  fontSize: 13,
                   color: AppTheme.textColor2,
                   fontWeight: FontWeight.w600,
                   textAlign: TextAlign.center,

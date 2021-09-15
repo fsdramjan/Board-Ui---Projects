@@ -178,7 +178,6 @@ Lorem ipsum dolor sit amet, consectetur adipisce
 Lorem ipsum dolor sit amet, consectetur adipisce
 nw elit, sed do eiusmodLorem ipsum dolor sit ami
 etretqr consectetur adipiscen''',
-
                       hintStyle: TextStyle(
                         color: AppTheme.textColor2,
                         fontSize: 12,

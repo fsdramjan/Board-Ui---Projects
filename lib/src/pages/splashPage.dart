@@ -1,5 +1,5 @@
+import 'package:board_ui/src/pages/chatDetailsPage.dart';
 import 'package:board_ui/src/pages/loginWithPage.dart';
-import 'package:board_ui/src/pages/placeingBidPage.dart';
 
 import 'package:board_ui/src/pages/registerWithPage.dart';
 import 'package:board_ui/src/widgets/kText.dart';
@@ -19,7 +19,7 @@ class SplashPage extends StatelessWidget {
                 height: 50,
               ),
               GestureDetector(
-                onTap: () => Get.to(PlaceingBidPage()),
+                onTap: () => Get.to(ChatDetailsPage()),
                 child: Image.asset(
                   'assets/img/logo.png',
                   width: 330,
