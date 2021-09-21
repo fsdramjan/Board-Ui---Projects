@@ -1,7 +1,9 @@
 import 'package:board_ui/src/configs/appTheme.dart';
-import 'OtpPage.dart';
+import 'profilePage.dart';
+
+import 'chatPage.dart';
+
 import 'homePage.dart';
-import 'loginPage.dart';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -18,13 +20,6 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  List<Widget> screens = [
-    HomePage(),
-    LoginPage(),
-    OtpPage(),
-    SearchPage(),
-    SplashPage(),
-  ];
   // ignore: unused_field
   int _currentTab = 0;
   final PageStorageBucket bucket = PageStorageBucket();
@@ -33,6 +28,7 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       backgroundColor: HexColor('FBFBFB'),
       body: PageStorage(
         bucket: bucket,
@@ -67,7 +63,7 @@ class _HomeState extends State<Home> {
         ),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      bottomNavigationBar: BottomAppBar(
+      bottomSheet: BottomAppBar(
         color: AppTheme.white,
         elevation: 0,
         // shape: CircularNotchedRectangle(),
@@ -121,7 +117,7 @@ class _HomeState extends State<Home> {
               MaterialButton(
                 onPressed: () {
                   setState(() {
-                    _currentScreens = LoginPage();
+                    _currentScreens = ChatPage();
                     _currentTab = 2;
                   });
                 },
@@ -136,7 +132,7 @@ class _HomeState extends State<Home> {
               MaterialButton(
                 onPressed: () {
                   setState(() {
-                    _currentScreens = OtpPage();
+                    _currentScreens = ProfilePage();
                     _currentTab = 3;
                   });
                 },

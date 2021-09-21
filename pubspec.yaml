@@ -17,6 +17,8 @@ dependencies:
   font_awesome_flutter: 
   cupertino_icons: ^1.0.2
   google_fonts:
+  flutter_credit_card:
+  expandable: 
 
 dev_dependencies:
   flutter_test:
@@ -44,3 +46,6 @@ flutter:
     - family: Poppins Thin
       fonts:
         - asset: fonts/Poppins-Thin.ttf
+    - family: Poppins Medium
+      fonts:
+        - asset: fonts/Poppins-Medium.ttf

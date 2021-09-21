@@ -258,7 +258,7 @@ start working today!''',
         ),
         child: Checkbox(
             fillColor: MaterialStateProperty.all(Colors.transparent),
-            checkColor: Colors.green,
+            checkColor: AppTheme.iconColor,
             value: value,
             onChanged: (value) {
               setState(() {

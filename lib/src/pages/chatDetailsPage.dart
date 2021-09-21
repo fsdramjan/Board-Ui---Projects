@@ -16,6 +16,7 @@ class ChatDetailsPage extends StatefulWidget {
 
 class _ChatDetailsPageState extends State<ChatDetailsPage> {
   bool value = false;
+  bool on = false;
 
   @override
   Widget build(BuildContext context) {
@@ -251,10 +252,10 @@ class _ChatDetailsPageState extends State<ChatDetailsPage> {
                               ),
                             ],
                           ),
-                          child: CupertinoSwitch(
+                          child: 
+                          CupertinoSwitch(
                             trackColor: Colors.white,
-                            activeColor:
-                                value == false ? Colors.white : Colors.white,
+                            activeColor: Colors.white,
                             value: value,
                             onChanged: (value) =>
                                 setState(() => this.value = value),

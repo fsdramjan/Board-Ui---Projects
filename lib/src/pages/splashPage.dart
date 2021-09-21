@@ -1,4 +1,5 @@
-import 'package:board_ui/src/pages/chatDetailsPage.dart';
+import 'package:board_ui/src/pages/home.dart';
+
 import 'package:board_ui/src/pages/loginWithPage.dart';
 
 import 'package:board_ui/src/pages/registerWithPage.dart';
@@ -19,7 +20,7 @@ class SplashPage extends StatelessWidget {
                 height: 50,
               ),
               GestureDetector(
-                onTap: () => Get.to(ChatDetailsPage()),
+                onTap: () => Get.to(Home()),
                 child: Image.asset(
                   'assets/img/logo.png',
                   width: 330,
@@ -34,7 +35,7 @@ class SplashPage extends StatelessWidget {
                 children: [
                   KText(
                     text: '''Don't have account?''',
-                    fontSize: 15,
+                    fontSize: 14,
                     color: HexColor('#BCBCBC'),
                   ),
                   GestureDetector(
@@ -42,8 +43,10 @@ class SplashPage extends StatelessWidget {
                     child: KText(
                       text: ' Sign up',
                       color: HexColor('#323643'),
-                      fontSize: 15,
-                      fontWeight: FontWeight.w700,
+                      fontSize: 14,
+                      fontWeight: FontWeight.w600,
+
+                      // fontFamily: 'Poppins Bold ',
                     ),
                   ),
                 ],

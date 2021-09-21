@@ -16,6 +16,19 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        appBar: AppBar(
+          automaticallyImplyLeading: false,
+          title: IconButton(
+            onPressed: () => Get.back(),
+            icon: Padding(
+              padding: EdgeInsets.only(left: 30),
+              child: Icon(
+                Icons.arrow_back_ios,
+                size: 18,
+              ),
+            ),
+          ),
+        ),
         body: SingleChildScrollView(
           child: Padding(
             padding: EdgeInsets.symmetric(horizontal: 40),
@@ -24,22 +37,7 @@ class _LoginPageState extends State<LoginPage> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 SizedBox(
-                  height: 40,
-                ),
-                GestureDetector(
-                  onTap: () => Get.back(),
-                  child: Container(
-                    child: Padding(
-                      padding: EdgeInsets.only(left: 10),
-                      child: Icon(
-                        Icons.arrow_back_ios,
-                        size: 18,
-                      ),
-                    ),
-                  ),
-                ),
-                SizedBox(
-                  height: 40,
+                  height: 30,
                 ),
                 KText(
                   text: 'Login',
@@ -214,13 +212,14 @@ start working today!''',
           borderRadius: BorderRadius.circular(5),
         ),
         child: Checkbox(
-            fillColor: MaterialStateProperty.all(Colors.transparent),
-            checkColor: Colors.green,
-            value: value,
-            onChanged: (value) {
-              setState(() {
-                this.value = value!;
-              });
-            }),
+          fillColor: MaterialStateProperty.all(Colors.transparent),
+          checkColor: AppTheme.iconColor,
+          value: value,
+          onChanged: (value) {
+            setState(() {
+              this.value = value!;
+            });
+          },
+        ),
       );
 }

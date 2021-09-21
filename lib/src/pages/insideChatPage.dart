@@ -294,77 +294,82 @@ m dolor sit ametretqr consectetu.''',
                   ],
                 ),
               ),
-              SizedBox(height: 20),
+              SizedBox(height: 120),
             ],
           ),
         ),
-        bottomSheet: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 6),
-          child: Container(
-            height: 100,
-            width: Get.width,
-            decoration: BoxDecoration(
-              color: AppTheme.white,
-              boxShadow: [
-                BoxShadow(
-                  color: AppTheme.textColor2.withOpacity(.80),
-                  spreadRadius: 10,
-                  blurRadius: 40,
-                  offset: Offset(1, 30),
+        bottomSheet: Container(
+          height: 100,
+          width: Get.width,
+          decoration: BoxDecoration(
+            color: AppTheme.white,
+            boxShadow: [
+              BoxShadow(
+                color: AppTheme.textColor2.withOpacity(.80),
+                spreadRadius: 10,
+                blurRadius: 40,
+                offset: Offset(1, 30),
+              ),
+            ],
+            borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(40),
+              topRight: Radius.circular(40),
+            ),
+          ),
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: 35),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                SizedBox(
+                  height: 45,
+                  width: 230,
+                  child: TextField(
+                    minLines: 1,
+                    maxLines: 5,
+                    decoration: InputDecoration(
+                      focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(
+                            width: 1.50,
+                            color: AppTheme.textColor2.withOpacity(.20)),
+                        borderRadius: BorderRadius.circular(30),
+                      ),
+                      enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(30),
+                        borderSide: BorderSide(
+                          width: 1.50,
+                          color: AppTheme.textColor2.withOpacity(.20),
+                        ),
+                      ),
+                      hintText: 'Add a comment',
+                      hintStyle: TextStyle(
+                        fontSize: 14,
+                        color: AppTheme.textColor2.withOpacity(.70),
+                      ),
+                      suffixIcon: Image.asset(
+                        'assets/icon/right_arrow.png',
+                        width: 22,
+                      ),
+                      contentPadding: EdgeInsets.only(left: 10),
+                      filled: false,
+                    ),
+                  ),
+                ),
+                IconButton(
+                  onPressed: () {},
+                  icon: Image.asset(
+                    'assets/icon/attach_file.png',
+                    width: 20,
+                  ),
+                ),
+                IconButton(
+                  onPressed: () {},
+                  icon: Image.asset(
+                    'assets/icon/mic.png',
+                    width: 20,
+                  ),
                 ),
               ],
-              borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(40),
-                topRight: Radius.circular(40),
-              ),
-            ),
-            child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: 35),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  SizedBox(
-                    height: 50,
-                    width: 220,
-                    child: TextField(
-                      minLines: 1,
-                      maxLines: 5,
-                      decoration: InputDecoration(
-                        enabledBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(30),
-                          borderSide: BorderSide(
-                              width: 1.50,
-                              color: AppTheme.textColor2.withOpacity(.20)),
-                        ),
-                        hintText: 'Add a comment',
-                        hintStyle: TextStyle(
-                            fontSize: 14,
-                            color: AppTheme.textColor2.withOpacity(.70)),
-                        suffixIcon: Image.asset(
-                          'assets/icon/right_arrow.png',
-                          width: 22,
-                        ),
-                        contentPadding: EdgeInsets.only(left: 10),
-                        filled: false,
-                      ),
-                    ),
-                  ),
-                  IconButton(
-                    onPressed: () {},
-                    icon: Image.asset(
-                      'assets/icon/attach_file.png',
-                      width: 22,
-                    ),
-                  ),
-                  IconButton(
-                    onPressed: () {},
-                    icon: Image.asset(
-                      'assets/icon/mic.png',
-                      width: 22,
-                    ),
-                  ),
-                ],
-              ),
             ),
           ),
         ),

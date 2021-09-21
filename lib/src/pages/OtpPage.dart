@@ -44,6 +44,18 @@ class _OtpPageState extends State<OtpPage> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        appBar: AppBar(
+          leading: Padding(
+            padding: EdgeInsets.only(left: 45),
+            child: IconButton(
+              onPressed: () => Get.back(),
+              icon: Icon(
+                Icons.arrow_back_ios,
+                size: 18,
+              ),
+            ),
+          ),
+        ),
         body: SingleChildScrollView(
           child: Padding(
             padding: EdgeInsets.symmetric(horizontal: 40),
@@ -51,19 +63,6 @@ class _OtpPageState extends State<OtpPage> {
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                SizedBox(
-                  height: 40,
-                ),
-                GestureDetector(
-                  onTap: () => Get.back(),
-                  child: Padding(
-                    padding: EdgeInsets.only(left: 10),
-                    child: Icon(
-                      Icons.arrow_back_ios,
-                      size: 18,
-                    ),
-                  ),
-                ),
                 SizedBox(
                   height: 40,
                 ),

@@ -12,6 +12,19 @@ class RegisterPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        appBar: AppBar(
+          automaticallyImplyLeading: false,
+          title: IconButton(
+            onPressed: () => Get.back(),
+            icon: Padding(
+              padding: EdgeInsets.only(left: 30),
+              child: Icon(
+                Icons.arrow_back_ios,
+                size: 18,
+              ),
+            ),
+          ),
+        ),
         body: SingleChildScrollView(
           child: Padding(
             padding: EdgeInsets.symmetric(horizontal: 40),
@@ -20,20 +33,7 @@ class RegisterPage extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 SizedBox(
-                  height: 40,
-                ),
-                GestureDetector(
-                  onTap: () => Get.back(),
-                  child: Padding(
-                    padding: EdgeInsets.only(left: 10),
-                    child: Icon(
-                      Icons.arrow_back_ios,
-                      size: 18,
-                    ),
-                  ),
-                ),
-                SizedBox(
-                  height: 40,
+                  height: 30,
                 ),
                 KText(
                   text: 'Register',
