@@ -18,6 +18,8 @@ class _ChatDetailsPageState extends State<ChatDetailsPage> {
   bool value = false;
   bool on = false;
 
+  final Color activeColor = Color.fromARGB(255, 52, 199, 89);
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -37,8 +39,6 @@ class _ChatDetailsPageState extends State<ChatDetailsPage> {
                     Padding(
                       padding: EdgeInsets.symmetric(horizontal: 5),
                       child: Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           IconButton(
                             onPressed: () => Get.back(),
@@ -222,13 +222,19 @@ class _ChatDetailsPageState extends State<ChatDetailsPage> {
                               ),
                             ],
                           ),
-                          child: CupertinoSwitch(
-                            trackColor:
-                                value == false ? Colors.white : Colors.white,
-                            activeColor: AppTheme.iconColor,
-                            value: value,
-                            onChanged: (value) =>
-                                setState(() => this.value = value),
+                          child: ShaderMask(
+                            child: CupertinoSwitch(
+                              activeColor: AppTheme.white,
+                              value: value,
+                              onChanged: (v) => setState(() => value = v),
+                            ),
+                            shaderCallback: (r) {
+                              return LinearGradient(
+                                colors: value
+                                    ? [Colors.white, AppTheme.iconColor]
+                                    : [AppTheme.iconColor, Colors.white],
+                              ).createShader(r);
+                            },
                           ),
                         ),
                       ),
@@ -252,13 +258,19 @@ class _ChatDetailsPageState extends State<ChatDetailsPage> {
                               ),
                             ],
                           ),
-                          child: 
-                          CupertinoSwitch(
-                            trackColor: Colors.white,
-                            activeColor: Colors.white,
-                            value: value,
-                            onChanged: (value) =>
-                                setState(() => this.value = value),
+                          child: ShaderMask(
+                            child: CupertinoSwitch(
+                              activeColor: AppTheme.white,
+                              value: value,
+                              onChanged: (v) => setState(() => value = v),
+                            ),
+                            shaderCallback: (r) {
+                              return LinearGradient(
+                                colors: value
+                                    ? [Colors.white, AppTheme.iconColor]
+                                    : [AppTheme.iconColor, Colors.white],
+                              ).createShader(r);
+                            },
                           ),
                         ),
                       ),

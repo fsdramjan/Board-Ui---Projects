@@ -1,7 +1,5 @@
-import 'package:board_ui/src/pages/home.dart';
-
+import 'package:board_ui/src/pages/bottomBarHome.dart';
 import 'package:board_ui/src/pages/loginWithPage.dart';
-
 import 'package:board_ui/src/pages/registerWithPage.dart';
 import 'package:board_ui/src/widgets/kText.dart';
 import 'package:flutter/material.dart';
@@ -20,7 +18,7 @@ class SplashPage extends StatelessWidget {
                 height: 50,
               ),
               GestureDetector(
-                onTap: () => Get.to(Home()),
+                onTap: () => Get.to(BottomBarHome()),
                 child: Image.asset(
                   'assets/img/logo.png',
                   width: 330,

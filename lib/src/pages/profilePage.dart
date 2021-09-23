@@ -1,7 +1,7 @@
 import 'package:board_ui/src/configs/appTheme.dart';
+import 'package:board_ui/src/pages/bottomBarProfile.dart';
 import 'package:board_ui/src/pages/notificationsPage.dart';
 import 'package:board_ui/src/pages/profileDetailsPage.dart';
-import 'package:board_ui/src/pages/settingsPage.dart';
 import 'package:board_ui/src/widgets/kText.dart';
 import 'package:board_ui/src/widgets/listTile.dart';
 import 'package:flutter/material.dart';
@@ -25,7 +25,7 @@ class ProfilePage extends StatelessWidget {
             children: [
               SizedBox(height: 10),
               ListTile(
-                onTap: () => Get.to(ProfileDetailsPage()),
+                onTap: () => Get.to(BottomBarProfile()),
                 leading: ClipRRect(
                   borderRadius: BorderRadius.circular(50),
                   child: Image.asset(
@@ -187,7 +187,7 @@ class ProfilePage extends StatelessWidget {
                   Padding(
                     padding: listtilePadding,
                     child: listTile(
-                      () => Get.to(SettingsPage()),
+                      () => Get.back(),
                       'Settings',
                       'Set your preferred settings',
                     ),

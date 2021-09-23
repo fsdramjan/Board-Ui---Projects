@@ -172,7 +172,7 @@ class _AddNewCardPagesState extends State<AddNewCardPages> {
                                   textInputAction: TextInputAction.next,
                                   keyboardType: TextInputType.datetime,
                                   decoration: InputDecoration(
-                                    hintText: 'Expiry Date',
+                                    hintText: 'DD/MM/YY',
                                     hintStyle: TextStyle(
                                       fontSize: 14,
                                       fontFamily: 'poppins Regular',

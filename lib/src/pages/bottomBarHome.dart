@@ -12,14 +12,14 @@ import 'package:hexcolor/hexcolor.dart';
 import 'searchPages.dart';
 import 'splashPage.dart';
 
-class Home extends StatefulWidget {
-  const Home({Key? key}) : super(key: key);
+class BottomBarHome extends StatefulWidget {
+  const BottomBarHome({Key? key}) : super(key: key);
 
   @override
-  _HomeState createState() => _HomeState();
+  _BottomBarHomeState createState() => _BottomBarHomeState();
 }
 
-class _HomeState extends State<Home> {
+class _BottomBarHomeState extends State<BottomBarHome> {
   // ignore: unused_field
   int _currentTab = 0;
   final PageStorageBucket bucket = PageStorageBucket();

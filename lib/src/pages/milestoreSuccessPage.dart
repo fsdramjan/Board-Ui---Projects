@@ -1,5 +1,5 @@
 import 'package:board_ui/src/configs/appTheme.dart';
-import 'package:board_ui/src/pages/home.dart';
+import 'package:board_ui/src/pages/bottomBarHome.dart';
 import 'package:board_ui/src/widgets/kText.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -131,7 +131,7 @@ and you'll find details there''',
                 ),
                 SizedBox(height: 150),
                 GestureDetector(
-                  onTap: () => Get.to(Home()),
+                  onTap: () => Get.to(BottomBarHome()),
                   child: Container(
                     height: 50,
                     width: double.infinity,
