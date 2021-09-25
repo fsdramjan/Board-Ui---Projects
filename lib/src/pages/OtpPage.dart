@@ -44,18 +44,6 @@ class _OtpPageState extends State<OtpPage> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        appBar: AppBar(
-          leading: Padding(
-            padding: EdgeInsets.only(left: 45),
-            child: IconButton(
-              onPressed: () => Get.back(),
-              icon: Icon(
-                Icons.arrow_back_ios,
-                size: 18,
-              ),
-            ),
-          ),
-        ),
         body: SingleChildScrollView(
           child: Padding(
             padding: EdgeInsets.symmetric(horizontal: 40),
@@ -64,12 +52,22 @@ class _OtpPageState extends State<OtpPage> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 SizedBox(
+                  height: 30,
+                ),
+                IconButton(
+                  onPressed: () => Get.back(),
+                  icon: Icon(
+                    Icons.arrow_back_ios,
+                    size: 18,
+                  ),
+                ),
+                SizedBox(
                   height: 40,
                 ),
                 KText(
                   text: 'OTP Verification',
                   color: HexColor('#323643'),
-                  fontSize: 20,
+                  fontSize: AppTheme.textSize20,
                   fontFamily: 'Poppins Semi Bold',
                 ),
                 SizedBox(
@@ -78,7 +76,8 @@ class _OtpPageState extends State<OtpPage> {
                 KText(
                   text: '''Enter the 4-digit code sent to your registered
 email to get verified''',
-                  fontSize: 14,
+                  fontSize: AppTheme.textSize14,
+                  fontFamily: 'Poppins Medium',
                   color: HexColor('#BCBCBC'),
                 ),
                 SizedBox(
@@ -169,14 +168,14 @@ email to get verified''',
                   children: [
                     KText(
                       text: '''Don't receive code?''',
-                      fontSize: 15,
+                      fontSize: AppTheme.textSize15,
                       color: AppTheme.textColor2,
                     ),
                     GestureDetector(
                       onTap: () {},
                       child: KText(
                         text: ' Resend',
-                        fontSize: 15,
+                        fontSize: AppTheme.textSize15,
                         fontFamily: 'Poppins Semi Bold',
                       ),
                     ),
@@ -202,7 +201,7 @@ email to get verified''',
                           child: KText(
                             text: 'Confirm OTP',
                             color: Colors.white,
-                            fontSize: 16,
+                            fontSize: AppTheme.textSize15,
                             fontFamily: 'Poppins Semi Bold',
                           ),
                         ),

@@ -12,19 +12,6 @@ class RegisterPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        appBar: AppBar(
-          automaticallyImplyLeading: false,
-          title: IconButton(
-            onPressed: () => Get.back(),
-            icon: Padding(
-              padding: EdgeInsets.only(left: 30),
-              child: Icon(
-                Icons.arrow_back_ios,
-                size: 18,
-              ),
-            ),
-          ),
-        ),
         body: SingleChildScrollView(
           child: Padding(
             padding: EdgeInsets.symmetric(horizontal: 40),
@@ -33,12 +20,25 @@ class RegisterPage extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 SizedBox(
-                  height: 30,
+                  height: 40,
+                ),
+                GestureDetector(
+                  onTap: () => Get.back(),
+                  child: Padding(
+                    padding: EdgeInsets.only(left: 15),
+                    child: Image.asset(
+                      'assets/icon/back.png',
+                      scale: 3,
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  height: 40,
                 ),
                 KText(
                   text: 'Register',
                   color: AppTheme.textColor,
-                  fontSize: 20,
+                  fontSize: AppTheme.textSize20,
                   fontFamily: 'Poppins Semi Bold',
                 ),
                 SizedBox(
@@ -47,7 +47,8 @@ class RegisterPage extends StatelessWidget {
                 KText(
                   text: '''Create a new account using your email and
 start working today!''',
-                  fontSize: 14,
+                  fontSize: AppTheme.textSize14,
+                  fontFamily: 'Poppins Medium',
                   color: AppTheme.textColor2,
                 ),
                 SizedBox(
@@ -64,8 +65,8 @@ start working today!''',
                     ),
                     KText(
                       text: 'Email Address',
-                      fontSize: 13,
-                      fontWeight: FontWeight.w600,
+                      fontSize: AppTheme.textSize13,
+                      fontFamily: 'Poppins Medium',
                     ),
                   ],
                 ),
@@ -73,14 +74,15 @@ start working today!''',
                   height: 10,
                 ),
                 Container(
-                  height: 55,
-                  width: Get.width,
+                  height: AppTheme.height50,
+                  width: AppTheme.widthMax,
                   child: TextField(
                     keyboardType: TextInputType.emailAddress,
                     decoration: InputDecoration(
-                      hintText: 'Mist4227s@gmail.com',
+                      hintText: '    Mist4227s@gmail.com',
                       hintStyle: TextStyle(
-                        fontSize: 14,
+                        fontSize: AppTheme.textSize13,
+                        fontFamily: 'Poppins Medium',
                         color: AppTheme.textColor2,
                       ),
                     ),
@@ -95,21 +97,21 @@ start working today!''',
                   children: [
                     KText(
                       text: 'Already have an account?',
-                      fontSize: 14,
+                      fontSize: AppTheme.textSize14,
                       color: AppTheme.textColor2,
                     ),
                     GestureDetector(
                       onTap: () => Get.to(LoginPage()),
                       child: KText(
                         text: ' Login',
-                        fontSize: 14,
+                        fontSize: AppTheme.textSize14,
                         fontWeight: FontWeight.w700,
                       ),
                     ),
                   ],
                 ),
                 SizedBox(
-                  height: 50,
+                  height: 60,
                 ),
                 GestureDetector(
                   onTap: () => Get.to(OtpPage()),
@@ -127,9 +129,9 @@ start working today!''',
                           alignment: Alignment.center,
                           child: KText(
                             text: 'Register Account',
-                            color: Colors.white,
-                            fontSize: 16,
-                            fontWeight: FontWeight.w600,
+                            color: AppTheme.white,
+                            fontSize: AppTheme.textSize15,
+                            fontFamily: 'Poppins Semi Bold',
                           ),
                         ),
                         Positioned(

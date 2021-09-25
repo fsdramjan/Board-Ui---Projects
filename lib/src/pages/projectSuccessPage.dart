@@ -110,7 +110,7 @@ will find all details there''',
                     ),
                     RichText(
                       text: TextSpan(
-                        text: ' 10,000 ',
+                        text: ' 15,000 ',
                         style: TextStyle(
                           fontSize: 13,
                           color: AppTheme.textColor,
@@ -144,8 +144,8 @@ will find all details there''',
                       child: KText(
                         text: 'Back to HomePage',
                         color: AppTheme.white,
-                        fontSize: 14,
-                        fontWeight: FontWeight.w600,
+                        fontSize: 15,
+                        fontFamily: AppTheme.semi,
                       ),
                     ),
                   ),

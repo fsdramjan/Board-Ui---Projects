@@ -16,7 +16,7 @@ class LoginWithPage extends StatelessWidget {
       child: Scaffold(
         body: SingleChildScrollView(
           child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 40),
+            padding: AppTheme.paddingH40,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -26,9 +26,9 @@ class LoginWithPage extends StatelessWidget {
                 ),
                 KText(
                   text: 'Login',
-                  color: HexColor('#323643'),
-                  fontSize: 20,
-                  fontFamily: 'Poppins Semi Bold',
+                  color: AppTheme.textColor,
+                  fontSize: AppTheme.textSize20,
+                  fontFamily: AppTheme.semi,
                 ),
                 SizedBox(
                   height: 13,
@@ -36,8 +36,8 @@ class LoginWithPage extends StatelessWidget {
                 KText(
                   text: '''Login to your account using your email or
 social media accounts''',
-                  fontSize: 14,
-                  color: HexColor('#BCBCBC'),
+                  fontSize: AppTheme.textSize14,
+                  color: AppTheme.textColor2,
                 ),
                 SizedBox(
                   height: 50,
@@ -47,11 +47,11 @@ social media accounts''',
                   leading: Icon(
                     FontAwesomeIcons.facebookF,
                     size: 20,
-                    color: HexColor('#F7D107'),
+                    color: AppTheme.iconColor,
                   ),
                   title: KText(
                     text: 'Sign in using Facebook',
-                    fontSize: 14,
+                    fontSize: AppTheme.textSize14,
                   ),
                 ),
                 SizedBox(
@@ -62,11 +62,11 @@ social media accounts''',
                   leading: Icon(
                     FontAwesomeIcons.google,
                     size: 20,
-                    color: HexColor('#F7D107'),
+                    color: AppTheme.iconColor,
                   ),
                   title: KText(
                     text: 'Sign in using Google',
-                    fontSize: 14,
+                    fontSize: AppTheme.textSize14,
                   ),
                 ),
                 SizedBox(
@@ -77,11 +77,11 @@ social media accounts''',
                   leading: Icon(
                     FontAwesomeIcons.apple,
                     size: 24,
-                    color: HexColor('#F7D107'),
+                    color: AppTheme.iconColor,
                   ),
                   title: KText(
                     text: 'Sign in using Apple',
-                    fontSize: 14,
+                    fontSize: AppTheme.textSize14,
                   ),
                 ),
                 SizedBox(
@@ -92,11 +92,10 @@ social media accounts''',
                   leading: Image.asset(
                     'assets/icon/gmail.png',
                     width: 33,
-                    // color: HexColor('#F7D107'),
                   ),
                   title: KText(
                     text: 'Sign in using Email',
-                    fontSize: 14,
+                    fontSize: AppTheme.textSize14,
                   ),
                 ),
                 SizedBox(
@@ -108,15 +107,15 @@ social media accounts''',
                   children: [
                     KText(
                       text: '''Don't have account?''',
-                      fontSize: 14,
+                      fontSize: AppTheme.textSize14,
                       color: AppTheme.textColor2,
                     ),
                     GestureDetector(
                       onTap: () => Get.to(RegisterWithPage()),
                       child: KText(
                         text: ' Sign up',
-                        fontSize: 14,
-                        fontWeight: FontWeight.w700,
+                        fontSize: AppTheme.textSize14,
+                        fontFamily: AppTheme.semi,
                       ),
                     ),
                   ],

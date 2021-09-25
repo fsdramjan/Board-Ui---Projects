@@ -17,9 +17,11 @@ dependencies:
   font_awesome_flutter: 
   cupertino_icons: ^1.0.2
   google_fonts:
-  flutter_credit_card:
-  expandable: 
+  flutter_rating_bar: ^4.0.0
+  groovin_widgets: ^3.0.2
+  
 
+  
 dev_dependencies:
   flutter_test:
     sdk: flutter

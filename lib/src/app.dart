@@ -1,6 +1,7 @@
 import 'package:board_ui/src/configs/appTheme.dart';
 import 'package:board_ui/src/pages/splashPage.dart';
 import 'package:flutter/material.dart';
+
 import 'package:get/get.dart';
 
 class App extends StatelessWidget {

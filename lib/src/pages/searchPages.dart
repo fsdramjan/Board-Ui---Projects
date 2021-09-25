@@ -1,4 +1,5 @@
 import 'package:board_ui/src/configs/appTheme.dart';
+import 'package:board_ui/src/pages/projectPage.dart';
 import 'package:board_ui/src/widgets/kText.dart';
 import 'package:board_ui/src/widgets/searchFields.dart';
 
@@ -41,15 +42,15 @@ class SearchPage extends StatelessWidget {
       child: Scaffold(
         body: SingleChildScrollView(
           child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 30),
+            padding: AppTheme.paddingH30,
             child: Column(
               children: [
                 SizedBox(height: 40),
                 Center(
                   child: KText(
                     text: 'Search',
-                    fontFamily: 'Poppins Semi Bold',
-                    fontSize: 17,
+                    fontFamily: AppTheme.semi,
+                    fontSize: AppTheme.textSize17,
                   ),
                 ),
                 SizedBox(height: 40),
@@ -64,15 +65,15 @@ class SearchPage extends StatelessWidget {
                   children: [
                     KText(
                       text: 'Categories',
-                      fontFamily: 'Poppins Semi Bold',
-                      fontSize: 15,
+                      fontFamily: AppTheme.semi,
+                      fontSize: AppTheme.textSize15,
                       color: AppTheme.textColor,
                     ),
                     Spacer(),
                     KText(
                       text: 'View All  ',
-                      fontFamily: 'Poppins Semi Bold',
-                      fontSize: 13,
+                      fontFamily: AppTheme.semi,
+                      fontSize: AppTheme.textSize13,
                       color: AppTheme.iconColor,
                     ),
                     Icon(
@@ -123,9 +124,9 @@ class SearchPage extends StatelessWidget {
                                 child: Center(
                                   child: KText(
                                     text: '${image['title']}',
-                                    fontSize: 15,
+                                    fontSize: AppTheme.textSize15,
                                     color: AppTheme.white,
-                                    fontFamily: 'Poppins Semi Bold',
+                                    fontFamily: AppTheme.semi,
                                   ),
                                 ),
                               ),
@@ -141,15 +142,15 @@ class SearchPage extends StatelessWidget {
                   children: [
                     KText(
                       text: 'Projects',
-                      fontFamily: 'Poppins Semi Bold',
-                      fontSize: 15,
+                      fontFamily: AppTheme.semi,
+                      fontSize: AppTheme.textSize15,
                       color: AppTheme.textColor,
                     ),
                     Spacer(),
                     KText(
                       text: 'View All  ',
-                      fontFamily: 'Poppins Semi Bold',
-                      fontSize: 13,
+                      fontFamily: AppTheme.semi,
+                      fontSize: AppTheme.textSize13,
                       color: AppTheme.iconColor,
                     ),
                     Icon(
@@ -166,14 +167,16 @@ class SearchPage extends StatelessWidget {
                   shrinkWrap: true,
                   primary: false,
                   itemBuilder: (BuildContext context, int index) {
-                    return Container(
-                      height: 130,
-                      width: Get.width,
-                      // color: Colors.red,
-                      child: Column(
-                        children: [
-                          listViewContent(),
-                        ],
+                    return GestureDetector(
+                      onTap: () => Get.to(ProjectPage()),
+                      child: Container(
+                        height: 130,
+                        width: AppTheme.widthMax,
+                        child: Column(
+                          children: [
+                            listViewContent(),
+                          ],
+                        ),
                       ),
                     );
                   },
@@ -197,14 +200,14 @@ class SearchPage extends StatelessWidget {
           children: [
             KText(
               text: 'Open',
-              fontSize: 13,
-              fontWeight: FontWeight.w600,
+              fontSize: AppTheme.textSize13,
+              fontFamily: AppTheme.medium,
               color: AppTheme.primaryColor,
             ),
             KText(
               text: 'Ends within 4 days',
-              fontSize: 12,
-              fontWeight: FontWeight.w600,
+              fontSize: AppTheme.textSize12,
+              fontFamily: AppTheme.medium,
               color: AppTheme.textColor2,
             ),
           ],
@@ -213,7 +216,7 @@ class SearchPage extends StatelessWidget {
         KText(
           text: '''Design a WordPress website for fashion b..''',
           fontSize: 15.50,
-          fontFamily: 'poppins Semi Bold',
+          fontFamily: AppTheme.semi,
           color: AppTheme.textColor,
         ),
         SizedBox(height: 10),
@@ -253,24 +256,24 @@ class SearchPage extends StatelessWidget {
             SizedBox(width: 20),
             KText(
               text: '60 Bids',
-              fontSize: 13,
+              fontSize: AppTheme.textSize12,
             ),
             Spacer(),
             RichText(
               text: TextSpan(
                 text: '10,000 ',
                 style: TextStyle(
-                  fontSize: 13,
+                  fontSize: AppTheme.textSize13,
                   color: AppTheme.textColor,
-                  fontFamily: 'Poppins Semi Bold',
+                  fontFamily: AppTheme.semi,
                 ),
                 children: [
                   TextSpan(
                     text: 'SAR ',
                     style: TextStyle(
-                      fontSize: 13,
+                      fontSize: AppTheme.textSize13,
                       color: AppTheme.textColor2,
-                      fontFamily: 'Poppins Semi Bold',
+                      fontFamily: AppTheme.medium,
                     ),
                   ),
                 ],
@@ -279,23 +282,23 @@ class SearchPage extends StatelessWidget {
             KText(
               text: '~',
               color: AppTheme.iconColor,
-              fontSize: 16,
+              fontSize: AppTheme.textSize16,
             ),
             RichText(
               text: TextSpan(
-                text: ' 10,000 ',
+                text: ' 15,000 ',
                 style: TextStyle(
-                  fontSize: 13,
+                  fontSize: AppTheme.textSize13,
                   color: AppTheme.textColor,
-                  fontFamily: 'Poppins Semi Bold',
+                  fontFamily: AppTheme.semi,
                 ),
                 children: [
                   TextSpan(
                     text: 'SAR',
                     style: TextStyle(
-                      fontSize: 13,
+                      fontSize: AppTheme.textSize13,
                       color: AppTheme.textColor2,
-                      fontFamily: 'Poppins Semi Bold',
+                      fontFamily: AppTheme.medium,
                     ),
                   ),
                 ],

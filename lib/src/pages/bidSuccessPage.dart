@@ -1,4 +1,5 @@
 import 'package:board_ui/src/configs/appTheme.dart';
+import 'package:board_ui/src/pages/projectPage.dart';
 import 'package:board_ui/src/widgets/kText.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -162,12 +163,12 @@ we wish you good luck''',
                     ),
                   ],
                 ),
-                SizedBox(height: 120),
+                SizedBox(height: 150),
                 GestureDetector(
-                  onTap: () => Get.to(BidSuccessPage()),
+                  onTap: () => Get.to(ProjectPage()),
                   child: Container(
                     height: 50,
-                    width: double.infinity,
+                    width: Get.width,
                     decoration: BoxDecoration(
                       color: AppTheme.primaryColor,
                       borderRadius: BorderRadius.circular(10),
@@ -178,7 +179,7 @@ we wish you good luck''',
                         text: 'Back to Projects',
                         color: AppTheme.white,
                         fontSize: 15,
-                        fontWeight: FontWeight.w600,
+                        fontFamily: 'Poppins Semi Bold',
                       ),
                     ),
                   ),

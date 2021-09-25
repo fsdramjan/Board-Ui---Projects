@@ -1,12 +1,12 @@
 import 'package:board_ui/src/configs/appTheme.dart';
+import 'package:board_ui/src/widgets/kText.dart';
 import 'profileDetailsPage.dart';
 import 'chatPage.dart';
 import 'homePage.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hexcolor/hexcolor.dart';
-import 'searchPages.dart';
-import 'splashPage.dart';
+
 
 class BottomBarProfile extends StatefulWidget {
   const BottomBarProfile({Key? key}) : super(key: key);
@@ -42,7 +42,9 @@ class _BottomBarProfileState extends State<BottomBarProfile> {
             child: MaterialButton(
               onPressed: () {
                 setState(() {
-                  _currentScreens = SplashPage();
+                  _currentScreens = Center(
+                    child: KText(text: 'Group page'),
+                  );
                   _currentTab = 5;
                 });
               },
@@ -99,7 +101,9 @@ class _BottomBarProfileState extends State<BottomBarProfile> {
               MaterialButton(
                 onPressed: () {
                   setState(() {
-                    _currentScreens = SearchPage();
+                    _currentScreens = Center(
+                      child: KText(text: 'Connect page'),
+                    );
                     _currentTab = 1;
                   });
                 },

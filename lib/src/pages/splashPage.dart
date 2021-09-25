@@ -1,8 +1,12 @@
+import 'package:board_ui/src/configs/appTheme.dart';
 import 'package:board_ui/src/pages/bottomBarHome.dart';
+
 import 'package:board_ui/src/pages/loginWithPage.dart';
+
 import 'package:board_ui/src/pages/registerWithPage.dart';
 import 'package:board_ui/src/widgets/kText.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:hexcolor/hexcolor.dart';
 
@@ -14,8 +18,18 @@ class SplashPage extends StatelessWidget {
         body: SingleChildScrollView(
           child: Column(
             children: [
+              Container(
+                alignment: Alignment.centerRight,
+                child: IconButton(
+                  onPressed: () {},
+                  icon: Icon(
+                    FontAwesomeIcons.globeAmericas,
+                    color: AppTheme.primaryColor,
+                  ),
+                ),
+              ),
               SizedBox(
-                height: 50,
+                height: 30,
               ),
               GestureDetector(
                 onTap: () => Get.to(BottomBarHome()),
@@ -24,27 +38,26 @@ class SplashPage extends StatelessWidget {
                   width: 330,
                 ),
               ),
-              SizedBox(
-                height: 220,
-              ),
+              SizedBox(height: 200),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   KText(
                     text: '''Don't have account?''',
-                    fontSize: 14,
-                    color: HexColor('#BCBCBC'),
+                    fontSize: AppTheme.textSize14,
+                    fontFamily: AppTheme.medium,
+                    color: AppTheme.textColor2,
                   ),
                   GestureDetector(
-                    onTap: () => Get.to(RegisterWithPage()),
+                    onTap: () => Get.to(
+                      RegisterWithPage(),
+                    ),
                     child: KText(
                       text: ' Sign up',
                       color: HexColor('#323643'),
-                      fontSize: 14,
-                      fontWeight: FontWeight.w600,
-
-                      // fontFamily: 'Poppins Bold ',
+                      fontSize: AppTheme.textSize14,
+                      fontFamily: AppTheme.semi,
                     ),
                   ),
                 ],
@@ -55,25 +68,22 @@ class SplashPage extends StatelessWidget {
               GestureDetector(
                 onTap: () => Get.to(LoginWithPage()),
                 child: Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 30),
+                  padding: AppTheme.paddingH30,
                   child: Container(
-                    height: 50,
-                    width: double.infinity,
+                    height: AppTheme.height50,
+                    width: AppTheme.widthMax,
                     decoration: BoxDecoration(
-                      color: HexColor('#41d9c6'),
-                      borderRadius: BorderRadius.circular(10),
+                      color: AppTheme.primaryColor,
+                      borderRadius: AppTheme.circular10,
                     ),
                     child: Stack(
                       alignment: Alignment.center,
                       children: [
-                        Container(
-                          alignment: Alignment.center,
-                          child: KText(
-                            text: 'Login',
-                            color: Colors.white,
-                            fontSize: 16,
-                            fontWeight: FontWeight.w600,
-                          ),
+                        KText(
+                          text: 'Login',
+                          color: Colors.white,
+                          fontSize: AppTheme.textSize15,
+                          fontWeight: FontWeight.w600,
                         ),
                         Positioned(
                           right: 20,

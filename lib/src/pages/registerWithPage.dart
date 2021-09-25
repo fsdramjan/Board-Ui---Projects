@@ -21,9 +21,18 @@ class RegisterWithPage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                SizedBox(
-                  height: 80,
+                SizedBox(height: 40),
+                GestureDetector(
+                  onTap: () => Get.back(),
+                  child: Padding(
+                    padding: EdgeInsets.only(left: 15),
+                    child: Image.asset(
+                      'assets/icon/back.png',
+                      scale: 3,
+                    ),
+                  ),
                 ),
+                SizedBox(height: 40),
                 KText(
                   text: 'Register',
                   color: HexColor('#323643'),
@@ -37,6 +46,7 @@ class RegisterWithPage extends StatelessWidget {
                   text: '''Create a new account using your email or
 social media accounts''',
                   fontSize: 14,
+                  fontFamily: 'Poppins Medium',
                   color: HexColor('#BCBCBC'),
                 ),
                 SizedBox(
@@ -51,6 +61,7 @@ social media accounts''',
                   ),
                   title: KText(
                     text: 'Sign up using Facebook',
+                    fontFamily: 'Poppins Medium',
                     fontSize: 14,
                   ),
                 ),
@@ -67,6 +78,7 @@ social media accounts''',
                   title: KText(
                     text: 'Sign up using Google',
                     fontSize: 14,
+                    fontFamily: 'Poppins Medium',
                   ),
                 ),
                 SizedBox(
@@ -81,6 +93,7 @@ social media accounts''',
                   ),
                   title: KText(
                     text: 'Sign up using Apple',
+                    fontFamily: 'Poppins Medium',
                     fontSize: 14,
                   ),
                 ),
@@ -96,6 +109,7 @@ social media accounts''',
                   ),
                   title: KText(
                     text: 'Sign up using Email',
+                    fontFamily: 'Poppins Medium',
                     fontSize: 14,
                   ),
                 ),

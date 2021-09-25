@@ -1,7 +1,13 @@
 import 'package:board_ui/src/configs/appTheme.dart';
+import 'package:board_ui/src/pages/PaymilestonePage.dart';
 import 'package:board_ui/src/pages/bottomBarProfile.dart';
+import 'package:board_ui/src/pages/loginWithPage.dart';
 import 'package:board_ui/src/pages/notificationsPage.dart';
-import 'package:board_ui/src/pages/profileDetailsPage.dart';
+import 'package:board_ui/src/pages/privacyAndPolicyPage.dart';
+
+import 'package:board_ui/src/pages/settingsPage.dart';
+import 'package:board_ui/src/pages/terms&conditionsPage.dart';
+import 'package:board_ui/src/pages/topupBalanceMilestonePage.dart';
 import 'package:board_ui/src/widgets/kText.dart';
 import 'package:board_ui/src/widgets/listTile.dart';
 import 'package:flutter/material.dart';
@@ -114,56 +120,62 @@ class ProfilePage extends StatelessWidget {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Container(
-                              height: 45,
-                              width: 150,
-                              decoration: BoxDecoration(
-                                color: AppTheme.white,
-                                borderRadius: BorderRadius.circular(10),
-                              ),
-                              child: Row(
-                                children: [
-                                  SizedBox(width: 40),
-                                  Text(
-                                    'Top Up',
-                                    style: GoogleFonts.cairo(
-                                      color: AppTheme.primaryColor,
-                                      fontWeight: FontWeight.w700,
+                            GestureDetector(
+                              onTap: () => Get.to(TopUpBalanceMileStonePage()),
+                              child: Container(
+                                height: 45,
+                                width: 150,
+                                decoration: BoxDecoration(
+                                  color: AppTheme.white,
+                                  borderRadius: BorderRadius.circular(10),
+                                ),
+                                child: Row(
+                                  children: [
+                                    SizedBox(width: 40),
+                                    Text(
+                                      'Top Up',
+                                      style: GoogleFonts.cairo(
+                                        color: AppTheme.primaryColor,
+                                        fontWeight: FontWeight.w700,
+                                      ),
                                     ),
-                                  ),
-                                  SizedBox(width: 30),
-                                  Image.asset(
-                                    'assets/icon/topup.png',
-                                    width: 20,
-                                  )
-                                ],
+                                    SizedBox(width: 30),
+                                    Image.asset(
+                                      'assets/icon/topup.png',
+                                      width: 20,
+                                    )
+                                  ],
+                                ),
                               ),
                             ),
-                            Container(
-                              height: 45,
-                              width: 150,
-                              decoration: BoxDecoration(
-                                border: Border.all(color: Colors.white54),
-                                color: Colors.transparent,
-                                borderRadius: BorderRadius.circular(10),
-                              ),
-                              child: Row(
-                                children: [
-                                  SizedBox(width: 25),
-                                  Text(
-                                    'Withdraw',
-                                    style: GoogleFonts.cairo(
-                                      color: AppTheme.white,
-                                      fontWeight: FontWeight.w700,
+                            GestureDetector(
+                              onTap: () => Get.to(PayMileStonePage()),
+                              child: Container(
+                                height: 45,
+                                width: 150,
+                                decoration: BoxDecoration(
+                                  border: Border.all(color: Colors.white54),
+                                  color: Colors.transparent,
+                                  borderRadius: BorderRadius.circular(10),
+                                ),
+                                child: Row(
+                                  children: [
+                                    SizedBox(width: 25),
+                                    Text(
+                                      'Withdraw',
+                                      style: GoogleFonts.cairo(
+                                        color: AppTheme.white,
+                                        fontWeight: FontWeight.w700,
+                                      ),
                                     ),
-                                  ),
-                                  SizedBox(width: 25),
-                                  Image.asset(
-                                    'assets/icon/withdraw.png',
-                                    width: 22,
-                                    color: AppTheme.white,
-                                  ),
-                                ],
+                                    SizedBox(width: 25),
+                                    Image.asset(
+                                      'assets/icon/withdraw.png',
+                                      width: 22,
+                                      color: AppTheme.white,
+                                    ),
+                                  ],
+                                ),
                               ),
                             ),
                           ],
@@ -187,7 +199,7 @@ class ProfilePage extends StatelessWidget {
                   Padding(
                     padding: listtilePadding,
                     child: listTile(
-                      () => Get.back(),
+                      () => Get.to(SettingsPage()),
                       'Settings',
                       'Set your preferred settings',
                     ),
@@ -198,7 +210,7 @@ class ProfilePage extends StatelessWidget {
                   Padding(
                     padding: listtilePadding,
                     child: listTile(
-                      () {},
+                      () => Get.to(PrivacyAndPolicy()),
                       'Privacy Policy',
                       'Check your latest privacy & policy',
                     ),
@@ -209,7 +221,7 @@ class ProfilePage extends StatelessWidget {
                   Padding(
                     padding: listtilePadding,
                     child: listTile(
-                      () {},
+                      () => Get.to(TermsAndConditionPage()),
                       'Terms & Conditions',
                       'Check your latest Terms & Conditions',
                     ),
@@ -220,7 +232,97 @@ class ProfilePage extends StatelessWidget {
                   Padding(
                     padding: listtilePadding,
                     child: listTile(
-                      () => {},
+                      () => Get.defaultDialog(
+                        radius: 30,
+                        title: 'Contact Us',
+                        titleStyle: TextStyle(
+                          fontSize: 16,
+                          fontFamily: 'Poppins Semi Bold',
+                        ),
+                        middleText: 'Send a message to our team',
+                        middleTextStyle: TextStyle(
+                          fontSize: 13,
+                          color: AppTheme.textColor2,
+                          fontFamily: 'Poppins Medium',
+                        ),
+                        actions: [
+                          InkWell(
+                            onTap: () {},
+                            child: Container(
+                              height: 80,
+                              width: 80,
+                              decoration: BoxDecoration(
+                                  color: Colors.grey.shade50,
+                                  borderRadius: BorderRadius.circular(20)),
+                              child: Column(
+                                children: [
+                                  SizedBox(height: 10),
+                                  Image.asset(
+                                    'assets/icon/yahoo.png',
+                                    width: 30,
+                                  ),
+                                  SizedBox(height: 10),
+                                  KText(
+                                    text: 'Yahoo',
+                                    fontSize: 12,
+                                    fontFamily: 'Poppins Medium',
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                          InkWell(
+                            onTap: () {},
+                            child: Container(
+                              height: 80,
+                              width: 80,
+                              decoration: BoxDecoration(
+                                  color: Colors.grey.shade50,
+                                  borderRadius: BorderRadius.circular(20)),
+                              child: Column(
+                                children: [
+                                  SizedBox(height: 10),
+                                  Image.asset(
+                                    'assets/icon/gmail1.png',
+                                    width: 30,
+                                  ),
+                                  SizedBox(height: 10),
+                                  KText(
+                                    text: 'Gmail',
+                                    fontSize: 12,
+                                    fontFamily: 'Poppins Medium',
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                          InkWell(
+                            onTap: () {},
+                            child: Container(
+                              height: 80,
+                              width: 80,
+                              decoration: BoxDecoration(
+                                  color: Colors.grey.shade50,
+                                  borderRadius: BorderRadius.circular(20)),
+                              child: Column(
+                                children: [
+                                  SizedBox(height: 10),
+                                  Image.asset(
+                                    'assets/icon/outlook.png',
+                                    width: 30,
+                                  ),
+                                  SizedBox(height: 10),
+                                  KText(
+                                    text: 'Outlook',
+                                    fontSize: 12,
+                                    fontFamily: 'Poppins Medium',
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
                       'Contact Us',
                       'Send us a message if you need help',
                     ),
@@ -233,7 +335,7 @@ class ProfilePage extends StatelessWidget {
               Padding(
                 padding: EdgeInsets.only(left: 30),
                 child: TextButton(
-                  onPressed: () {},
+                  onPressed: () => Get.to(LoginWithPage()),
                   child: KText(
                     text: 'Logout',
                     fontFamily: 'Poppins Medium',
@@ -242,7 +344,7 @@ class ProfilePage extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(height: 150),
+              SizedBox(height: 140),
             ],
           ),
         ),

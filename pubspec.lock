@@ -64,13 +64,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "3.0.2"
-  expandable:
-    dependency: "direct main"
-    description:
-      name: expandable
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "5.0.1"
   fake_async:
     dependency: transitive
     description:
@@ -97,13 +90,13 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
-  flutter_credit_card:
+  flutter_rating_bar:
     dependency: "direct main"
     description:
-      name: flutter_credit_card
+      name: flutter_rating_bar
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.0.0"
+    version: "4.0.0"
   flutter_test:
     dependency: "direct dev"
     description: flutter
@@ -135,6 +128,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.1.0"
+  groovin_widgets:
+    dependency: "direct main"
+    description:
+      name: groovin_widgets
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "3.0.2"
   hexcolor:
     dependency: "direct main"
     description:

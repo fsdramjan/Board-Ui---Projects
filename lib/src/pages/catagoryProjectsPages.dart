@@ -163,9 +163,7 @@ class CatagoryProjectsPage extends StatelessWidget {
                         size: 24,
                       ),
                     ),
-                    SizedBox(
-                      width: 70,
-                    ),
+                    SizedBox(width: 70),
                     KText(
                       text: 'Create New Project',
                       fontFamily: 'Poppins Semi Bold',

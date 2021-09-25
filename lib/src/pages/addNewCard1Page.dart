@@ -2,25 +2,24 @@ import 'dart:ui';
 
 import 'package:board_ui/src/configs/appTheme.dart';
 import 'package:board_ui/src/pages/loginWithPage.dart';
-import 'package:board_ui/src/pages/projectSuccessPage.dart';
 import 'package:board_ui/src/widgets/cardNumberValidation.dart';
 import 'package:board_ui/src/widgets/dateValidation.dart';
 import 'package:board_ui/src/widgets/kText.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hexcolor/hexcolor.dart';
 
-class AddNewCardPages extends StatefulWidget {
-  const AddNewCardPages({Key? key}) : super(key: key);
+class AddNewCard1Pages extends StatefulWidget {
+  const AddNewCard1Pages({Key? key}) : super(key: key);
 
   @override
-  _AddNewCardPagesState createState() => _AddNewCardPagesState();
+  _AddNewCard1PagesState createState() => _AddNewCard1PagesState();
 }
 
-class _AddNewCardPagesState extends State<AddNewCardPages> {
+class _AddNewCard1PagesState extends State<AddNewCard1Pages> {
+  //
   bool value = false;
 
   //
@@ -250,14 +249,13 @@ class _AddNewCardPagesState extends State<AddNewCardPages> {
                   SizedBox(width: 10),
                   KText(
                     text: 'Save this card for future use',
-                    fontSize: AppTheme.textSize15,
-                    fontFamily: AppTheme.medium,
+                    fontSize: 16,
                   ),
                 ],
               ),
               SizedBox(height: 200),
               GestureDetector(
-                onTap: () => Get.to(ProjectSuccessPage()),
+                onTap: () => Get.to(LoginWithPage()),
                 child: Container(
                   height: 50,
                   width: double.infinity,
@@ -270,8 +268,8 @@ class _AddNewCardPagesState extends State<AddNewCardPages> {
                     child: KText(
                       text: 'Add New Card',
                       color: Colors.white,
-                      fontSize: 15,
-                      fontFamily: AppTheme.semi,
+                      fontSize: 16,
+                      fontWeight: FontWeight.w600,
                     ),
                   ),
                 ),

@@ -1,115 +1,20 @@
-// import 'dart:io';
-
-// import 'package:flutter/cupertino.dart';
-// import 'package:flutter/foundation.dart';
-// import 'package:flutter/material.dart';
-// import 'package:groovin_widgets/groovin_widgets.dart';
-
-// class ProjectDetailsPage extends StatefulWidget {
-//   @override
-//   _ProjectDetailsPageState createState() => _ProjectDetailsPageState();
-// }
-
-// class _ProjectDetailsPageState extends State<ProjectDetailsPage> {
-//   var value;
-//   bool isExpanded = false;
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return LayoutBuilder(
-//       builder: (context, constraints) {
-//         if (constraints.maxWidth >= 700) {
-//           // tablet
-//           return Scaffold(
-//             body: ScrollControllerBuilder(
-//               builder: (_, controller) {
-//                 return SingleChildScrollView(
-//                   controller: controller,
-//                 );
-//               },
-//             ),
-//           );
-//         } else {
-//           // mobile
-//           return SplitColorBackground(
-//             headerColor: Colors.indigo,
-//             header: SafeArea(
-//               child: Column(
-//                 mainAxisAlignment: MainAxisAlignment.center,
-//                 children: <Widget>[],
-//               ),
-//             ),
-//             body: Center(
-//               child: Column(
-//                 children: [
-//                   Padding(
-//                     padding: const EdgeInsets.all(16.0),
-//                     child: OutlineDropdownButton(
-//                       items: [
-//                         DropdownMenuItem(
-//                           child: Text('Test Item'),
-//                           value: 'Test Item',
-//                         ),
-//                       ],
-//                       isExpanded: true,
-//                       hint: Text('Test Hint'),
-//                       value: value,
-//                       onChanged: (value) => print(value),
-//                     ),
-//                   ),
-//                 ],
-//               ),
-//             ),
-//           );
-//         }
-//       },
-//     );
-//   }
-// }
-
 import 'package:board_ui/src/configs/appTheme.dart';
-import 'package:board_ui/src/pages/PaymilestonePage.dart';
-import 'package:board_ui/src/pages/bidSuccessPage.dart';
 import 'package:board_ui/src/widgets/kText.dart';
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:groovin_widgets/groovin_widgets.dart';
 
-class ProjectDetailsPage extends StatefulWidget {
-  ProjectDetailsPage({Key? key}) : super(key: key);
+class TopUpBalanceMileStonePage extends StatefulWidget {
+  const TopUpBalanceMileStonePage({Key? key}) : super(key: key);
 
   @override
-  _ProjectDetailsPageState createState() => _ProjectDetailsPageState();
+  _TopUpBalanceMileStonePageState createState() =>
+      _TopUpBalanceMileStonePageState();
 }
 
-class _ProjectDetailsPageState extends State<ProjectDetailsPage> {
+class _TopUpBalanceMileStonePageState extends State<TopUpBalanceMileStonePage> {
   var value;
-  // ignore: unused_field
-  late String _selected;
-
-  List<Map> dropDownItem = [
-    {
-      'id': '1',
-      'minBudget': '10,000,',
-      'maxBudget': '15,000,',
-    },
-    {
-      'id': '1',
-      'minBudget': '10,000,',
-      'maxBudget': '15,000,',
-    },
-    {
-      'id': '1',
-      'minBudget': '10,000,',
-      'maxBudget': '15,000,',
-    },
-    {
-      'id': '1',
-      'minBudget': '10,000,',
-      'maxBudget': '15,000,',
-    },
-  ];
 
   @override
   Widget build(BuildContext context) {
@@ -141,75 +46,23 @@ class _ProjectDetailsPageState extends State<ProjectDetailsPage> {
                   height: 40,
                 ),
                 KText(
-                  text: 'Project Details',
+                  text: 'Create Milestones',
                   color: AppTheme.textColor,
-                  fontSize: 20,
+                  fontSize: 21,
                   fontFamily: 'Poppins Semi Bold',
                 ),
                 SizedBox(
                   height: 13,
                 ),
                 KText(
-                  text: '''Start adding more information about the project
-like its name and description''',
-                  fontSize: 14,
+                  text: '''Start creating milestones for your project to be
+able to work with suitable freelancer ''',
+                  fontFamily: 'Poppins Medium',
+                  fontSize: 13,
                   color: AppTheme.textColor2,
                 ),
                 SizedBox(
                   height: 30,
-                ),
-                Container(
-                  clipBehavior: Clip.none,
-                  height: 7,
-                  width: Get.width,
-                  decoration: BoxDecoration(
-                    color: Colors.grey.shade200,
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  child: Stack(
-                    children: [
-                      Container(
-                        height: 7,
-                        width: Get.width / 2.20,
-                        decoration: BoxDecoration(
-                          color: AppTheme.iconColor.withOpacity(.70),
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                SizedBox(
-                  height: 40,
-                ),
-                KText(
-                  text: 'Project Title',
-                  color: AppTheme.textColor,
-                  fontSize: 13,
-                  fontFamily: 'Poppins Semi Bold',
-                ),
-                SizedBox(
-                  height: 10,
-                ),
-                SizedBox(
-                  height: 55,
-                  child: TextField(
-                    style: TextStyle(
-                      fontSize: 14,
-                      color: AppTheme.textColor,
-                    ),
-                    decoration: InputDecoration(
-                      hintText: 'Design a school brochure',
-                      hintStyle: TextStyle(
-                        fontSize: 14,
-                        color: AppTheme.textColor2,
-                      ),
-                      contentPadding: EdgeInsets.only(left: 20, right: 20),
-                    ),
-                  ),
-                ),
-                SizedBox(
-                  height: 20,
                 ),
                 KText(
                   text: 'Project Budget',
@@ -340,59 +193,170 @@ like its name and description''',
                 ),
                 SizedBox(height: 30),
                 KText(
-                  text: 'Bid Description',
+                  text: 'Pay using',
+                  color: HexColor('#474461'),
+                  fontSize: 15,
                   fontFamily: 'Poppins Semi Bold',
-                  fontSize: 13,
-                  color: AppTheme.textColor,
                 ),
                 SizedBox(height: 20),
-                Container(
-                  height: 140,
-                  width: Get.width,
-                  child: TextField(
-                    maxLines: 200,
-                    style: TextStyle(
-                      fontSize: 12,
-                      color: Colors.grey,
-                      fontWeight: FontWeight.w600,
-                    ),
-                    decoration: InputDecoration(
-                      hintText:
-                          '''Lorem ipsum dolor sit amet, consectetur adipisce
-nw elit, sed do eiusmodLorem ipsum dolor sit ami
-Lorem ipsum dolor sit amet, consectetur adipisce
-Lorem ipsum dolor sit amet, consectetur adipisce
-nw elit, sed do eiusmodLorem ipsum dolor sit ami
-etretqr consectetur adipiscen''',
-                      hintStyle: TextStyle(
-                        color: AppTheme.textColor2,
-                        fontSize: 12,
-                      ),
-                      contentPadding: EdgeInsets.only(
-                        left: 20,
-                        top: 40,
-                        bottom: 10,
+                ListTile(
+                  leading: Image.asset(
+                    'assets/icon/visa.png',
+                    width: 25,
+                  ),
+                  title: KText(
+                    text: 'Online Payments',
+                    fontFamily: 'Poppins Medium',
+                    fontSize: 13,
+                  ),
+                  trailing: CircleAvatar(
+                    backgroundColor: HexColor('#C63878'),
+                    radius: 11,
+                    child: Center(
+                      child: Icon(
+                        Icons.done,
+                        color: AppTheme.white,
+                        size: 14,
                       ),
                     ),
                   ),
                 ),
-                SizedBox(height: 80),
+                SizedBox(height: 20),
+                Padding(
+                  padding: EdgeInsets.only(left: 15),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Icon(
+                        Icons.add,
+                        color: AppTheme.textColor2,
+                        size: 20,
+                      ),
+                      KText(
+                        text: 'Add New Card',
+                        fontFamily: 'Poppins Semi Bold',
+                        color: Colors.black.withOpacity(.60),
+                        fontSize: 13,
+                      ),
+                      Container(),
+                    ],
+                  ),
+                ),
+                SizedBox(height: 30),
+                Container(
+                  height: 60,
+                  width: Get.width,
+                  decoration: BoxDecoration(
+                    color: AppTheme.iconColor,
+                    borderRadius: BorderRadius.circular(5),
+                  ),
+                  child: Padding(
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 15,
+                      vertical: 15,
+                    ),
+                    child: Row(
+                      children: [
+                        Container(
+                          decoration: BoxDecoration(
+                            color: AppTheme.white,
+                            borderRadius: BorderRadius.circular(6),
+                          ),
+                          child: Padding(
+                            padding: EdgeInsets.all(10.0),
+                            child: Image.asset(
+                              'assets/icon/visa1.png',
+                              width: 30,
+                            ),
+                          ),
+                        ),
+                        SizedBox(width: 15),
+                        circleAvatar(),
+                        circleAvatar(),
+                        circleAvatar(),
+                        circleAvatar(),
+                        SizedBox(width: 15),
+                        circleAvatar(),
+                        circleAvatar(),
+                        circleAvatar(),
+                        circleAvatar(),
+                        SizedBox(width: 15),
+                        circleAvatar(),
+                        circleAvatar(),
+                        circleAvatar(),
+                        circleAvatar(),
+                        SizedBox(width: 15),
+                        KText(
+                          text: '123',
+                          fontSize: 12.50,
+                          fontFamily: 'Poppins Semi Bold',
+                          color: AppTheme.white,
+                        ),
+                        Spacer(),
+                        CircleAvatar(
+                          backgroundColor: AppTheme.white,
+                          radius: 11,
+                          child: Center(
+                            child: Icon(
+                              Icons.done,
+                              color: HexColor('#C63878'),
+                              size: 14,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                SizedBox(height: 20),
+                ListTile(
+                  leading: Image.asset(
+                    'assets/icon/cash.png',
+                    width: 25,
+                  ),
+                  title: KText(
+                    text: 'Pay using wallet',
+                    fontFamily: 'Poppins Medium',
+                    fontSize: 13,
+                  ),
+                  trailing: RichText(
+                    text: TextSpan(
+                      text: ' 10,000 ',
+                      style: TextStyle(
+                        fontSize: 13,
+                        color: AppTheme.textColor,
+                        fontFamily: 'Poppins Medium',
+                      ),
+                      children: [
+                        TextSpan(
+                          text: 'SAR',
+                          style: TextStyle(
+                            fontSize: 11,
+                            color: AppTheme.textColor2,
+                            fontFamily: 'Poppins Semi Bold',
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                SizedBox(height: 100),
                 GestureDetector(
-                  onTap: () => Get.to(PayMileStonePage()),
+                  onTap: () => Get.back(),
                   child: Container(
                     height: 50,
                     width: double.infinity,
                     decoration: BoxDecoration(
-                      color: AppTheme.primaryColor,
+                      color: HexColor('#41d9c6'),
                       borderRadius: BorderRadius.circular(10),
                     ),
                     child: Container(
                       alignment: Alignment.center,
                       child: KText(
-                        text: 'Continue',
-                        color: AppTheme.white,
+                        text: 'Top Up Balance',
+                        fontFamily: 'Poppins Semi Bold',
+                        color: Colors.white,
                         fontSize: 15,
-                        fontWeight: FontWeight.w600,
                       ),
                     ),
                   ),
@@ -402,6 +366,16 @@ etretqr consectetur adipiscen''',
             ),
           ),
         ),
+      ),
+    );
+  }
+
+  Widget circleAvatar() {
+    return Padding(
+      padding: EdgeInsets.all(2.0),
+      child: CircleAvatar(
+        backgroundColor: AppTheme.white,
+        radius: 2.80,
       ),
     );
   }

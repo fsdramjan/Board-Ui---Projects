@@ -1,4 +1,5 @@
 import 'package:board_ui/src/configs/appTheme.dart';
+import 'package:board_ui/src/pages/bottomBarHome.dart';
 import 'package:board_ui/src/widgets/kText.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -16,22 +17,9 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        appBar: AppBar(
-          automaticallyImplyLeading: false,
-          title: IconButton(
-            onPressed: () => Get.back(),
-            icon: Padding(
-              padding: EdgeInsets.only(left: 30),
-              child: Icon(
-                Icons.arrow_back_ios,
-                size: 18,
-              ),
-            ),
-          ),
-        ),
         body: SingleChildScrollView(
           child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 40),
+            padding: AppTheme.paddingH40,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -39,11 +27,24 @@ class _LoginPageState extends State<LoginPage> {
                 SizedBox(
                   height: 30,
                 ),
+                IconButton(
+                  onPressed: () => Get.back(),
+                  icon: Padding(
+                    padding: EdgeInsets.only(left: 5),
+                    child: Icon(
+                      Icons.arrow_back_ios,
+                      size: 16,
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  height: 30,
+                ),
                 KText(
                   text: 'Login',
                   color: AppTheme.textColor,
-                  fontSize: 20,
-                  fontFamily: 'Poppins Semi Bold',
+                  fontSize: AppTheme.textSize20,
+                  fontFamily: AppTheme.semi,
                 ),
                 SizedBox(
                   height: 13,
@@ -51,7 +52,7 @@ class _LoginPageState extends State<LoginPage> {
                 KText(
                   text: '''Login to your account using your email and
 start working today!''',
-                  fontSize: 14,
+                  fontSize: AppTheme.textSize14,
                   color: AppTheme.textColor2,
                 ),
                 SizedBox(
@@ -68,8 +69,8 @@ start working today!''',
                     ),
                     KText(
                       text: 'Email Address',
-                      fontSize: 13,
-                      fontWeight: FontWeight.w600,
+                      fontSize: AppTheme.textSize13,
+                      fontFamily: AppTheme.medium,
                     ),
                   ],
                 ),
@@ -84,8 +85,9 @@ start working today!''',
                     decoration: InputDecoration(
                       hintText: 'Mist4227s@gmail.com',
                       hintStyle: TextStyle(
-                        fontSize: 14,
+                        fontSize: AppTheme.textSize14,
                         color: AppTheme.textColor2,
+                        fontFamily: AppTheme.medium,
                       ),
                     ),
                   ),
@@ -97,15 +99,15 @@ start working today!''',
                   children: [
                     Image.asset(
                       'assets/icon/lock.png',
-                      width: 14,
+                      width: AppTheme.textSize14,
                     ),
                     SizedBox(
                       width: 15,
                     ),
                     KText(
                       text: 'Password',
-                      fontSize: 13,
-                      fontWeight: FontWeight.w600,
+                      fontSize: AppTheme.textSize13,
+                      fontFamily: AppTheme.medium,
                     ),
                   ],
                 ),
@@ -113,8 +115,8 @@ start working today!''',
                   height: 10,
                 ),
                 Container(
-                  height: 55,
-                  width: Get.width,
+                  height: AppTheme.height55,
+                  width: AppTheme.widthMax,
                   child: TextField(
                     keyboardType: TextInputType.number,
                     obscureText: true,
@@ -123,7 +125,7 @@ start working today!''',
                       hintText: '**********',
                       hintStyle: TextStyle(
                         letterSpacing: 6,
-                        fontSize: 14,
+                        fontSize: AppTheme.textSize14,
                         color: AppTheme.textColor2,
                       ),
                       suffixIcon: Padding(
@@ -145,16 +147,16 @@ start working today!''',
                     SizedBox(width: 15),
                     KText(
                       text: 'Remember me',
-                      fontSize: 14,
-                      // fontWeight: FontWeight.w500,
+                      fontSize: AppTheme.textSize14,
+                      fontFamily: AppTheme.medium,
                       color: AppTheme.textColor2,
                     ),
                     Spacer(),
                     KText(
                       text: 'Forget Password',
                       color: AppTheme.textColor,
-                      fontSize: 14,
-                      fontFamily: 'Poppins Semi Bold',
+                      fontSize: AppTheme.textSize14,
+                      fontFamily: AppTheme.semi,
                     ),
                   ],
                 ),
@@ -162,13 +164,13 @@ start working today!''',
                   height: 230,
                 ),
                 GestureDetector(
-                  onTap: () {},
+                  onTap: () => Get.to(BottomBarHome()),
                   child: Container(
-                    height: 50,
-                    width: double.infinity,
+                    height: AppTheme.height50,
+                    width: AppTheme.widthMax,
                     decoration: BoxDecoration(
                       color: AppTheme.primaryColor,
-                      borderRadius: BorderRadius.circular(10),
+                      borderRadius: AppTheme.circular10,
                     ),
                     child: Stack(
                       alignment: Alignment.center,
@@ -178,15 +180,15 @@ start working today!''',
                           child: KText(
                             text: 'Login',
                             color: AppTheme.white,
-                            fontSize: 16,
-                            fontWeight: FontWeight.w600,
+                            fontSize: AppTheme.textSize15,
+                            fontFamily: AppTheme.semi,
                           ),
                         ),
                         Positioned(
                           right: 20,
                           child: Image.asset(
                             'assets/icon/login.png',
-                            height: 18,
+                            height: 17,
                           ),
                         ),
                       ],

@@ -15,6 +15,8 @@ class ChatDetailsPage extends StatefulWidget {
 }
 
 class _ChatDetailsPageState extends State<ChatDetailsPage> {
+  bool value1 = false;
+  bool isExpanded = false;
   bool value = false;
   bool on = false;
 
@@ -120,7 +122,7 @@ class _ChatDetailsPageState extends State<ChatDetailsPage> {
               ),
               SizedBox(height: 10),
               Divider(
-                color: Colors.grey.shade100,
+                color: Colors.grey.shade200,
               ),
               SizedBox(height: 10),
               Padding(
@@ -206,75 +208,57 @@ class _ChatDetailsPageState extends State<ChatDetailsPage> {
                     ListTile(
                       leading: KText(
                         text: 'Hide Notifications',
-                        fontWeight: FontWeight.w600,
+                        fontFamily: AppTheme.medium,
                         fontSize: 14,
                       ),
                       trailing: Transform.scale(
                         scale: .90,
-                        child: Container(
-                          decoration: BoxDecoration(
-                            boxShadow: [
-                              BoxShadow(
-                                color: Colors.grey.shade300.withOpacity(.80),
-                                spreadRadius: .10,
-                                blurRadius: 30,
-                                offset: Offset(5, 10),
-                              ),
-                            ],
+                        child: ShaderMask(
+                          child: CupertinoSwitch(
+                            activeColor: value1 == true
+                                ? AppTheme.iconColor
+                                : AppTheme.iconColor,
+                            value: value,
+                            onChanged: (v) => setState(() => value = v),
                           ),
-                          child: ShaderMask(
-                            child: CupertinoSwitch(
-                              activeColor: AppTheme.white,
-                              value: value,
-                              onChanged: (v) => setState(() => value = v),
-                            ),
-                            shaderCallback: (r) {
-                              return LinearGradient(
-                                colors: value
-                                    ? [Colors.white, AppTheme.iconColor]
-                                    : [AppTheme.iconColor, Colors.white],
-                              ).createShader(r);
-                            },
-                          ),
+                          shaderCallback: (r) {
+                            return LinearGradient(
+                              colors: value1
+                                  ? [AppTheme.white, AppTheme.white]
+                                  : [AppTheme.iconColor, AppTheme.iconColor],
+                            ).createShader(r);
+                          },
                         ),
                       ),
                     ),
                     ListTile(
                       leading: KText(
                         text: 'Archive Chat',
-                        fontWeight: FontWeight.w600,
+                        fontFamily: AppTheme.medium,
                         fontSize: 14,
                       ),
                       trailing: Transform.scale(
                         scale: .90,
-                        child: Container(
-                          decoration: BoxDecoration(
-                            boxShadow: [
-                              BoxShadow(
-                                color: Colors.grey.shade300.withOpacity(.80),
-                                spreadRadius: .10,
-                                blurRadius: 30,
-                                offset: Offset(5, 10),
-                              ),
-                            ],
+                        child: ShaderMask(
+                          child: CupertinoSwitch(
+                            activeColor: value1 == true
+                                ? AppTheme.iconColor
+                                : AppTheme.iconColor,
+                            value: value,
+                            onChanged: (v) => setState(() => value = v),
                           ),
-                          child: ShaderMask(
-                            child: CupertinoSwitch(
-                              activeColor: AppTheme.white,
-                              value: value,
-                              onChanged: (v) => setState(() => value = v),
-                            ),
-                            shaderCallback: (r) {
-                              return LinearGradient(
-                                colors: value
-                                    ? [Colors.white, AppTheme.iconColor]
-                                    : [AppTheme.iconColor, Colors.white],
-                              ).createShader(r);
-                            },
-                          ),
+                          shaderCallback: (r) {
+                            return LinearGradient(
+                              colors: value1
+                                  ? [AppTheme.white, AppTheme.white]
+                                  : [AppTheme.iconColor, AppTheme.iconColor],
+                            ).createShader(r);
+                          },
                         ),
                       ),
                     ),
+                    SizedBox(height: 10),
+                    Divider(color: Colors.grey.shade200),
                     SizedBox(height: 50),
                     Padding(
                       padding: EdgeInsets.symmetric(horizontal: 20),
